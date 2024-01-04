@@ -1,6 +1,8 @@
 package so.shum;
 
 import org.junit.Test;
+import so.shum.App.NumberChecker;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
@@ -33,6 +35,14 @@ public class AppTest {
   public void testEvenNumbers() {
     assertTrue(App.evenOddNumber(8));  // Проверяем четное положительное число
     assertTrue(App.evenOddNumber(-10)); // Проверяем четное отрицательное число
+  }
+  @Test
+  public void testNumberInInterval() {
+    assertTrue(NumberChecker.numberInInterval(50)); // Число внутри интервала
+    assertFalse(NumberChecker.numberInInterval(10)); // Число меньше интервала
+    assertFalse(NumberChecker.numberInInterval(150)); // Число больше интервала
+    assertFalse(NumberChecker.numberInInterval(25)); // Граничное число (25 не входит в интервал)
+    assertFalse(NumberChecker.numberInInterval(100)); // Граничное число (100 не входит в интервал)
   }
 
 
